@@ -1,0 +1,10 @@
+public class NthOddNumber {
+    public static void main(String[] args) {
+        int N = 7;
+        int nthOddAfterNOddNumbers = findNthOddAfterNOddNumbers(N);
+        System.out.println(nthOddAfterNOddNumbers);
+    }
+    public static int findNthOddAfterNOddNumbers(int N) {
+        return 2 * N - 1 + 2 * N;
+    }
+}
