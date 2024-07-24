@@ -1,0 +1,19 @@
+public class BinaryConverter {
+
+    public static void main(String[] args) {
+        String binaryNumber = "1101"; 
+        int decimalNumber = binaryToDecimal(binaryNumber);
+        String octalNumber = decimalToOctal(decimalNumber);
+
+        System.out.println("Decimal Number: " + decimalNumber);
+        System.out.println("Octal: " + octalNumber);
+    }
+
+    public static int binaryToDecimal(String binary) {
+        return Integer.parseInt(binary, 2); 
+    }
+
+    public static String decimalToOctal(int decimal) {
+        return Integer.toOctalString(decimal);
+    }
+}
