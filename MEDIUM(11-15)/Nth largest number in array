@@ -1,0 +1,17 @@
+import java.util.Arrays;
+
+public class NthLargestNumber {
+
+    public static void main(String[] args) {
+        int[] numbers = {14, 67, 48, 23, 5, 62}; 
+        int N = 4; 
+        
+        int nthLargest = findNthLargest(numbers, N);
+        System.out.println(N + "th Largest number: " + nthLargest);
+    }
+
+    public static int findNthLargest(int[] numbers, int N) {
+        Arrays.sort(numbers);
+        return numbers[numbers.length - N]; 
+    }
+}
