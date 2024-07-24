@@ -1,0 +1,46 @@
+public class PalindromeChecker {
+
+    public static void main(String[] args) {
+        int choice = 1; 
+        if (choice == 1) {
+            String str = "MADAM";
+            if (isStringPalindrome(str)) {
+                System.out.println("Palindrome");
+            } else {
+                System.out.println("Not a Palindrome");
+            }
+        } else if (choice == 2) {
+            int num = 12321;
+            if (isNumberPalindrome(num)) {
+                System.out.println("Palindrome");
+            } else {
+                System.out.println("Not a Palindrome");
+            }
+        } else {
+            System.out.println("Invalid choice");
+        }
+    }
+
+    public static boolean isStringPalindrome(String str) {
+        int left = 0, right = str.length() - 1;
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    public static boolean isNumberPalindrome(int num) {
+        int original = num;
+        int reversed = 0;
+        while (num != 0) {
+            int digit = num % 10;
+            reversed = reversed * 10 + digit;
+            num /= 10;
+        }
+        return original == reversed;
+    }
+}
