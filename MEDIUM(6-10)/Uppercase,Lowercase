@@ -1,0 +1,30 @@
+public class CharacterCounter {
+
+    public static void main(String[] args) {
+        char[] inputChars = {'W', 'd', 'A', 'G', 'g', 'H', '*'}; 
+        countCharacters(inputChars);
+    }
+
+    public static void countCharacters(char[] inputChars) {
+        int upperCaseCount = 0;
+        int lowerCaseCount = 0;
+        int numberCount = 0;
+
+        for (char ch : inputChars) {
+            if (ch == '*') {
+                break;
+            }
+            if (Character.isUpperCase(ch)) {
+                upperCaseCount++;
+            } else if (Character.isLowerCase(ch)) {
+                lowerCaseCount++;
+            } else if (Character.isDigit(ch)) {
+                numberCount++;
+            }
+        }
+
+        System.out.println("Total count of lower case: " + lowerCaseCount);
+        System.out.println("Total count of upper case: " + upperCaseCount);
+        System.out.println("Total count of numbers: " + numberCount);
+    }
+}
