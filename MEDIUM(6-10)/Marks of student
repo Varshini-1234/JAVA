@@ -1,0 +1,31 @@
+public class StudentGrades {
+
+    public static void main(String[] args) {
+        
+        int pythonMarks = 90;
+        int cProgrammingMarks = 91;
+        int mathMarks = 92;
+        int physicsMarks = 93;
+
+        int totalMarks = pythonMarks + cProgrammingMarks + mathMarks + physicsMarks;
+        double aggregate = totalMarks / 4.0;
+
+        
+        String grade;
+        if (aggregate > 75) {
+            grade = "DISTINCTION";
+        } else if (aggregate >= 60) {
+            grade = "FIRST DIVISION";
+        } else if (aggregate >= 50) {
+            grade = "SECOND DIVISION";
+        } else if (aggregate >= 40) {
+            grade = "THIRD DIVISION";
+        } else {
+            grade = "FAIL";
+        }
+
+        System.out.println("Total = " + totalMarks);
+        System.out.println("Aggregate = " + aggregate);
+        System.out.println(grade);
+    }
+}
