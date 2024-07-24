@@ -1,0 +1,13 @@
+public class DecimalConverter {
+
+    public static void main(String[] args) {
+        int decimalNumber = 15;
+
+        String binaryNumber = Integer.toBinaryString(decimalNumber);
+        String octalNumber = Integer.toOctalString(decimalNumber);
+
+        System.out.println("Decimal Number: " + decimalNumber);
+        System.out.println("Binary Number = " + binaryNumber);
+        System.out.println("Octal Number = " + octalNumber);
+    }
+}
