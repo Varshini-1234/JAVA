@@ -1,0 +1,30 @@
+import java.util.HashSet;
+import java.util.Set;
+
+public class RemoveDuplicates {
+
+    public static void main(String[] args) {
+      
+        int[] elements = {10, 20, 20, 30, 40, 40, 50};
+        
+      
+        int[] uniqueElements = removeDuplicates(elements);
+        System.out.print("Non-duplicate items:\n[");
+        for (int i = 0; i < uniqueElements.length; i++) {
+            System.out.print(uniqueElements[i]);
+            if (i < uniqueElements.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
+    }
+
+    public static int[] removeDuplicates(int[] array) {
+        Set<Integer> set = new HashSet<>();
+        for (int num : array) {
+            set.add(num);
+        }
+
+        return set.stream().mapToInt(Integer::intValue).toArray();
+    }
+}
