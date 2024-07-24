@@ -1,0 +1,11 @@
+public class ATMBalance {
+    public static void main(String[] args) {
+        int[] denominations = {500, 100, 200, 2000};
+        int[] noteCounts = {4, 20, 32, 1};
+        int totalBalance = 0;
+        for (int i = 0; i < denominations.length; i++) {
+            totalBalance += denominations[i] * noteCounts[i];
+        }
+        System.out.println("Total Available Balance in ATM: " + totalBalance);
+    }
+}
