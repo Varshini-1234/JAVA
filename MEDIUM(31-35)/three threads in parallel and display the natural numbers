@@ -1,0 +1,31 @@
+class NaturalNumbersThread extends Thread {
+    private int threadNumber;
+
+    public NaturalNumbersThread(int threadNumber) {
+        this.threadNumber = threadNumber;
+    }
+
+    @Override
+    public void run() {
+        try {
+            for (int i = 1; i <= 10; i++) {
+                System.out.println("Thread " + threadNumber + ": " + i);
+                Thread.sleep(100); 
+            }
+        } catch (InterruptedException e) {
+            System.out.println("Thread " + threadNumber + " interrupted.");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        NaturalNumbersThread thread1 = new NaturalNumbersThread(1);
+        NaturalNumbersThread thread2 = new NaturalNumbersThread(2);
+        NaturalNumbersThread thread3 = new NaturalNumbersThread(3);
+
+        thread1.start();
+        thread2.start();
+        thread3.start();
+    }
+}
