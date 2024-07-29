@@ -1,0 +1,24 @@
+class Student {
+    private String name;
+    private String registerNumber;
+    private int[] marks = new int[5];
+    private int total;
+    private double average;
+    public Student(String name, String registerNumber, int[] marks) {
+        this.name = name;
+        this.registerNumber = registerNumber;
+        this.marks = marks;
+        calculateTotalAndAverage();
+    }
+
+    private void calculateTotalAndAverage() {
+        total = 0;
+        for (int mark : marks) {
+            total += mark;
+        }
+        average = total / 5.0;
+    }
+    public void displayDetails() {
+        System.out.println("Student Name: " + name);
+        System.out.println("Register Number: " + registerNumber);
+        System.out.print("Marks: ");
