@@ -1,0 +1,31 @@
+public class PowerCalculator {
+    public static double myPow(double x, int n) {
+       
+        if (n == 0) {
+            return 1.0;
+        }
+
+        long exp = n;
+        if (exp < 0) {
+            x = 1 / x;
+            exp = -exp;
+        }
+
+        double result = 1.0;
+        while (exp > 0) {
+            if ((exp % 2) == 1) { // If exp is odd
+                result *= x;
+            }
+            x *= x;
+            exp /= 2;
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        double x = 2.00000;
+        int n = 10;
+        System.out.println(myPow(x, n)); // Output: 1024.00000
+    }
+}
